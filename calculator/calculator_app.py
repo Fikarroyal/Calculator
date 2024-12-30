@@ -6,12 +6,10 @@ class BasicCalculatorApp:
         self.root = root
         self.root.title("Calculator")
 
-        # Entry widget to display the current equation
         self.equation = tk.StringVar()
         self.entry = tk.Entry(root, textvariable=self.equation, font=('Arial', 18), bd=10, insertwidth=2, width=14, borderwidth=4, relief='ridge')
         self.entry.grid(row=0, column=0, columnspan=4, sticky="nsew")
 
-        # Button layout
         buttons = [
             ('7', 1, 0), ('8', 1, 1), ('9', 1, 2), ('/', 1, 3),
             ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3),
@@ -44,7 +42,6 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = BasicCalculatorApp(root)
 
-    # Configure grid weights for a 5x4 grid (5 rows, 4 columns)
     for i in range(5):
         root.grid_rowconfigure(i, weight=1)
     for i in range(4):
